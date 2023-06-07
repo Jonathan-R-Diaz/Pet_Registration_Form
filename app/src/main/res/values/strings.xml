@@ -1,3 +1,12 @@
 <resources>
-    <string name="app_name">Pet Registration Form</string>
+    <string name="app_name">PetCare</string>
+    <string name="title">Pet Registration Form</string>
+    <string name="form_microchip">Microchip ID</string>
+    <string name="form_name">Name</string>
+    <string name="form_gender">Gender</string>
+    <string name="form_email">Email Address</string>
+    <string name="form_access">Access Code</string>
+    <string name="form_confirm">Confirm Code</string>
+    <string name="form_breed">Breed</string>
+    <string name="Neutered">Neutered</string>
 </resources>
