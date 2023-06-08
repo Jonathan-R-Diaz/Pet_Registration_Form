@@ -95,7 +95,7 @@
                     android:id="@+id/input_name" />
                 <!--Gender-->
                 <RadioGroup
-                    android:id="@+id/hungry_radio_group"
+                    android:id="@+id/gender_radio_group"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
