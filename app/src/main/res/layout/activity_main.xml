@@ -36,7 +36,7 @@
                 android:textSize="@dimen/header1" />
         </LinearLayout>
 
-        <!--Prompts and Input Widget -->
+        <!--Prompts, Inputs, Buttons -->
         <LinearLayout
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
@@ -86,11 +86,14 @@
                 android:orientation="vertical"
                 >
                 <!--Inputs-->
+                <!--Microchip-->
                 <EditText style="@style/input_short"
                     android:id="@+id/input_microchip"
                     android:hint="@string/default_microchip"/>
+                <!--Name-->
                 <EditText style="@style/input_short"
                     android:id="@+id/input_name" />
+                <!--Gender-->
                 <RadioGroup
                     android:id="@+id/hungry_radio_group"
                     android:layout_width="wrap_content"
@@ -109,19 +112,24 @@
                         android:layout_height="wrap_content"
                         android:checked="true" />
                 </RadioGroup>
+                <!--Email-->
                 <EditText style="@style/input_long"
                     android:hint="@string/default_email"
                     android:id="@+id/input_email"
                     android:inputType="textEmailAddress" />
+                <!--Access-->
                 <EditText style="@style/input_long"
                     android:id="@+id/input_access" />
+                <!--Confirm-->
                 <EditText style="@style/input_long"
                     android:id="@+id/input_confirm" />
+                <!--Breed-->
                 <Spinner style="@style/input_long"
                     android:id="@+id/input_breed"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"/>
+                <!--Neutered-->
                 <CheckBox
                     android:id="@+id/input_neutered"
                     android:text="@string/text_neutered"
