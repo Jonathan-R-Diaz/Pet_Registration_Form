@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="default_padding">28dp</dimen>
+    <dimen name="prompt_space_margin">16dp</dimen>
+    <dimen name="default_textsize">16sp</dimen>
+    <dimen name="header1">26sp</dimen>
+    <dimen name="right_padding_short">64dp</dimen>
+    <dimen name="right_padding_long">24dp</dimen>
+</resources>

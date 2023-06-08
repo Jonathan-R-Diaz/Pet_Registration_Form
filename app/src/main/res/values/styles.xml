@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="prompt">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_textsize</item>
+        <item name="android:paddingVertical">@dimen/prompt_space_margin</item>
+    </style>
+
+    <style name="input_short">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_textsize</item>
+        <item name="android:minHeight">54sp</item>
+        <item name="android:ems">5</item>
+        <item name="android:importantForAutofill">no</item>
+        <item name="android:layout_marginRight">@dimen/right_padding_short</item>
+    </style>
+
+    <style name="input_long">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_textsize</item>
+        <item name="android:minHeight">54sp</item>
+        <item name="android:ems">5</item>
+        <item name="android:importantForAutofill">no</item>
+        <item name="android:layout_marginRight">@dimen/right_padding_long</item>
+    </style>
+
+    <style name= "main_window">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:gravity">center</item>
+        <item name="android:orientation">vertical</item>
+
+    </style>
+
+    <style name="textButton">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:textSize">@dimen/default_textsize</item>
+        <item name="android:color">@color/black</item>
+    </style>
+</resources>
