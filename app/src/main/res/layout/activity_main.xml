@@ -90,8 +90,24 @@
                     android:id="@+id/input_microchip" />
                 <EditText style="@style/input_short"
                     android:id="@+id/input_name" />
-                <EditText style="@style/input_short"
-                    android:id="@+id/input_gender" />
+                <RadioGroup
+                    android:id="@+id/hungry_radio_group"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <RadioButton
+                        android:id="@+id/button_male"
+                        android:text="@string/gender_male"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingRight="@dimen/default_margin" />
+                    <RadioButton
+                        android:id="@+id/button_female"
+                        android:text="@string/gender_female"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:checked="true" />
+                </RadioGroup>
                 <EditText style="@style/input_long"
                     android:id="@+id/input_email"
                     android:inputType="textEmailAddress" />
