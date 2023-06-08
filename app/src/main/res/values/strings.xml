@@ -1,17 +1,28 @@
 <resources>
     <string name="app_name">PetCare</string>
     <string name="title">Pet Registration Form</string>
+
     <string name="text_microchip">Microchip ID</string>
     <string name="text_name">Name</string>
     <string name="text_gender">Gender</string>
-    <string name="gender_male">Male</string>
-    <string name="gender_female">Female</string>
     <string name="text_email">Email Address</string>
     <string name="text_access">Access Code</string>
     <string name="text_confirm">Confirm Code</string>
     <string name="text_breed">Breed</string>
     <string name="text_neutered">Neutered</string>
 
-    <string name="reset_button_text">RESET</string>
-    <string name="submit_button_text">SUBMIT</string>
+    <string name="gender_male">Male</string>
+    <string name="gender_female">Female</string>
+
+    <string name="button_text_reset">RESET</string>
+    <string name="button_text_submit">SUBMIT</string>
+
+    <string name="default_microchip">ID</string>
+    <string name="default_email">none@none.com</string>
+
+    <string-array name="breed_array">
+        <item>Husky</item>
+        <item>American Eskimo</item>
+        <item>German Shepard</item>
+    </string-array>
 </resources>

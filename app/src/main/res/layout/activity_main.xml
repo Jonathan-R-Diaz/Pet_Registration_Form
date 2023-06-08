@@ -87,7 +87,8 @@
                 >
                 <!--Inputs-->
                 <EditText style="@style/input_short"
-                    android:id="@+id/input_microchip" />
+                    android:id="@+id/input_microchip"
+                    android:hint="@string/default_microchip"/>
                 <EditText style="@style/input_short"
                     android:id="@+id/input_name" />
                 <RadioGroup
@@ -109,26 +110,34 @@
                         android:checked="true" />
                 </RadioGroup>
                 <EditText style="@style/input_long"
+                    android:hint="@string/default_email"
                     android:id="@+id/input_email"
                     android:inputType="textEmailAddress" />
                 <EditText style="@style/input_long"
                     android:id="@+id/input_access" />
                 <EditText style="@style/input_long"
                     android:id="@+id/input_confirm" />
-                <EditText style="@style/input_long"
-                    android:id="@+id/input_breed" />
-                <EditText style="@style/input_long"
-                    android:id="@+id/input_neutered" />
+                <Spinner style="@style/input_long"
+                    android:id="@+id/input_breed"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"/>
+                <CheckBox
+                    android:id="@+id/input_neutered"
+                    android:text="@string/text_neutered"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"/>
                 <!--Buttons-->
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="@dimen/default_margin">
                         <Button style="@style/textButton"
-                            android:text="@string/reset_button_text"
+                            android:text="@string/button_text_reset"
                             android:layout_marginEnd="20dp"/>
                         <Button style="@style/textButton"
-                            android:text="@string/submit_button_text"/>
+                            android:text="@string/button_text_submit"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
