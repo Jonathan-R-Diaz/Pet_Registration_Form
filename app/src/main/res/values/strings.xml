@@ -20,9 +20,35 @@
     <string name="default_microchip">ID</string>
     <string name="default_email">none@none.com</string>
 
+    <string name="input_neutered">Is Neutered?</string>
+
     <string-array name="breed_array">
         <item>Husky</item>
         <item>American Eskimo</item>
         <item>German Shepard</item>
+    </string-array>
+
+    <string name="error_microchip">Microchip must be between 6–15 uppercase letters and/or numbers!</string>
+    <string name="error_name">First letter of each name should be capital!</string>
+    <string name="error_email">Email format: "prefix@domain.[edu, co, com, gal]"</string>
+    <string name="error_codes">Codes do not match!</string>
+
+    <string name="test_goodchip">ELGA43</string>
+    <string name="test_badchip">fuckin</string>
+    <string name="test_goodname">Timmy Doo</string>
+    <string name="test_badname">ness wilson</string>
+    <string name="test_goodemail">example@example.com</string>
+    <string name="test_bademail">name@placeorg</string>
+    <string name="test_bademail2">nameplace.org</string>
+
+    <string name="test_code">69420</string>
+
+    <string name="success">Pet has been successfully submitted to database!</string>
+
+    <string-array name="chips">
+        <item>DA92384</item>
+        <item>5213A4EGAL</item>
+        <item>78EX8937</item>
+        <item>AAMOCS3</item>
     </string-array>
 </resources>
