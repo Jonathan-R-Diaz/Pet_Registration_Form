@@ -89,10 +89,12 @@
                 <!--Microchip-->
                 <EditText style="@style/input_short"
                     android:id="@+id/input_microchip"
-                    android:hint="@string/default_microchip"/>
+                    android:hint="@string/default_microchip"
+                    android:text="@string/test_goodchip"/>
                 <!--Name-->
                 <EditText style="@style/input_short"
-                    android:id="@+id/input_name" />
+                    android:id="@+id/input_name"
+                    android:text="@string/test_goodname"/>
                 <!--Gender-->
                 <RadioGroup
                     android:id="@+id/gender_radio_group"
@@ -116,13 +118,20 @@
                 <EditText style="@style/input_long"
                     android:hint="@string/default_email"
                     android:id="@+id/input_email"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:text="@string/test_bademail"/>
                 <!--Access-->
                 <EditText style="@style/input_long"
-                    android:id="@+id/input_access" />
+                    android:id="@+id/input_access"
+                    android:text="@string/test_code"
+                    android:inputType="numberPassword"
+                     />
                 <!--Confirm-->
                 <EditText style="@style/input_long"
-                    android:id="@+id/input_confirm" />
+                    android:id="@+id/input_confirm"
+                    android:text="@string/test_code"
+                    android:inputType="numberPassword"
+                    />
                 <!--Breed-->
                 <Spinner style="@style/input_long"
                     android:id="@+id/input_breed"
@@ -132,7 +141,7 @@
                 <!--Neutered-->
                 <CheckBox
                     android:id="@+id/input_neutered"
-                    android:text="@string/text_neutered"
+                    android:text="@string/input_neutered"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"/>
@@ -143,9 +152,11 @@
                     android:paddingTop="@dimen/default_margin">
                         <Button style="@style/textButton"
                             android:text="@string/button_text_reset"
-                            android:layout_marginEnd="20dp"/>
+                            android:layout_marginEnd="20dp"
+                            android:onClick="clickReset"/>
                         <Button style="@style/textButton"
-                            android:text="@string/button_text_submit"/>
+                            android:text="@string/button_text_submit"
+                            android:onClick="clickSubmit"/>
                 </LinearLayout>
             </LinearLayout>
         </LinearLayout>
