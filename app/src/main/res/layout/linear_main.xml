@@ -7,7 +7,6 @@
     android:layout_width="match_parent"
     android:gravity="center_horizontal"
     android:padding="@dimen/default_padding"
-
     tools:context="com.zybooks.petregistrationform.MainActivity">
 
     <!--Main window-->
@@ -90,11 +89,11 @@
                 <EditText style="@style/input_short"
                     android:id="@+id/input_microchip"
                     android:hint="@string/default_microchip"
-                    android:text="@string/test_goodchip"/>
+                    />
                 <!--Name-->
                 <EditText style="@style/input_short"
                     android:id="@+id/input_name"
-                    android:text="@string/test_goodname"/>
+                    />
                 <!--Gender-->
                 <RadioGroup
                     android:id="@+id/gender_radio_group"
@@ -116,20 +115,18 @@
                 </RadioGroup>
                 <!--Email-->
                 <EditText style="@style/input_long"
-                    android:hint="@string/default_email"
+
                     android:id="@+id/input_email"
                     android:inputType="textEmailAddress"
                     android:text="@string/test_bademail"/>
                 <!--Access-->
                 <EditText style="@style/input_long"
                     android:id="@+id/input_access"
-                    android:text="@string/test_code"
                     android:inputType="numberPassword"
                      />
                 <!--Confirm-->
                 <EditText style="@style/input_long"
                     android:id="@+id/input_confirm"
-                    android:text="@string/test_code"
                     android:inputType="numberPassword"
                     />
                 <!--Breed-->

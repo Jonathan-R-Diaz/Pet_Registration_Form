@@ -4,8 +4,6 @@ package com.zybooks.petregistrationform;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -41,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.relative_main);
 
         mPetCare = new PetCare();
 
@@ -101,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clickSubmit(View view){
 
+        System.out.println("Click");
         boolean submitted = true;
 
         String microchip = mMicroChipEditText.getText().toString();

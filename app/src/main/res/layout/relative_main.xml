@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_padding"
+    tools:context="com.zybooks.petregistrationform.MainActivity">
+
+        <!--Header-->
+        <RelativeLayout
+            android:id="@+id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true">
+            <!--App name-->
+            <TextView
+                android:id="@+id/app_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/app_name"
+                android:textSize="@dimen/default_textsize"
+                android:paddingBottom="18dp"/>
+            <!--Title-->
+            <TextView
+                android:id="@id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/title"
+                android:textSize="@dimen/header1"
+                android:layout_below="@id/app_name"
+                android:layout_centerHorizontal="true"
+                android:paddingBottom="40dp"/>
+
+        </RelativeLayout>
+        <!--Prompts-->
+        <RelativeLayout
+            android:id="@+id/prompts_widget"
+            android:layout_below="@id/header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:paddingRight="@dimen/relative_margin">
+
+            <!--Microchip-->
+            <TextView
+                android:id="@+id/prompt_microchip"
+                style="@style/prompt"
+                android:labelFor="@id/input_microchip"
+                android:text="@string/text_microchip" />
+
+            <!--Name-->
+            <TextView
+                android:id="@+id/prompt_name"
+                style="@style/prompt"
+                android:layout_below="@id/prompt_microchip"
+                android:labelFor="@id/input_name"
+                android:text="@string/text_name" />
+
+            <!--Gender-->
+            <TextView
+                android:id="@+id/prompt_gender"
+                style="@style/prompt"
+                android:layout_below="@id/prompt_name"
+                android:text="@string/text_gender" />
+
+            <!--Email-->
+            <TextView
+                android:id="@+id/prompt_email"
+                style="@style/prompt"
+                android:layout_below="@id/prompt_gender"
+                android:text="@string/text_email" />
+
+            <!--Access-->
+            <TextView
+                android:id="@+id/prompt_access"
+                style="@style/prompt"
+                android:layout_below="@id/prompt_email"
+                android:text="@string/text_access" />
+
+            <!--Confirm-->
+            <TextView
+                android:id="@+id/prompt_confirm"
+                style="@style/prompt"
+                android:layout_below="@id/prompt_access"
+                android:text="@string/text_confirm" />
+
+            <!--Breed-->
+            <TextView
+                android:id="@+id/prompt_breed"
+                style="@style/prompt"
+                android:layout_below="@id/prompt_confirm"
+                android:text="@string/text_breed" />
+
+            <!--Neutered-->
+            <TextView
+                android:id="@+id/prompt_neutered"
+                style="@style/prompt"
+                android:layout_below="@id/prompt_breed"
+                android:text="@string/text_neutered" />
+
+            <!--Inputs-->
+            <!--Microchip-->
+            <EditText
+                android:id="@+id/input_microchip"
+                android:layout_width="164dp"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@id/prompt_microchip"
+                android:layout_alignStart="@id/input_email"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/prompt_microchip"
+                android:layout_marginEnd="@dimen/relative_margin"/>
+
+            <!--Name-->
+            <EditText
+                android:id="@+id/input_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_microchip"
+                android:layout_alignBaseline="@id/prompt_name"
+                android:layout_alignStart="@id/input_email"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/prompt_microchip"
+                android:layout_marginEnd="@dimen/relative_margin"/>
+
+            <!--Gender-->
+            <RadioGroup
+                android:id="@+id/gender_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/prompt_gender"
+                android:layout_alignStart="@id/input_email"
+                android:layout_below="@id/input_name"
+                android:orientation="horizontal"
+                android:layout_marginTop="10dp">
+                <RadioButton
+                    android:id="@+id/button_male"
+                    android:text="@string/gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_margin"
+                    />
+                <RadioButton
+                    android:id="@+id/button_female"
+                    android:text="@string/gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </RadioGroup>
+
+            <!--Email-->
+            <EditText
+                android:id="@+id/input_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_name"
+                android:layout_alignBaseline="@id/prompt_email"
+                android:layout_marginStart="@dimen/relative_margin"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/prompt_microchip" />
+
+            <!--Access-->
+            <EditText
+                android:id="@+id/input_access"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_email"
+                android:layout_alignBaseline="@id/prompt_access"
+                android:layout_alignLeft="@id/input_email"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/prompt_microchip" />
+
+            <!--Confirm-->
+            <EditText
+                android:id="@+id/input_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_access"
+                android:layout_alignBaseline="@id/prompt_confirm"
+                android:layout_alignLeft="@id/input_email"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/prompt_microchip" />
+
+            <!--Breed-->
+            <Spinner
+                android:id="@+id/input_breed"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@id/prompt_breed"
+                android:layout_alignStart="@id/input_email"
+                android:layout_alignBaseline="@id/prompt_breed"
+                android:orientation="horizontal"/>
+
+            <!--Neutered-->
+            <CheckBox
+                android:id="@+id/input_neutered"
+                android:text="@string/input_neutered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/input_breed"
+                android:layout_alignBaseline="@id/prompt_neutered"
+                android:layout_alignLeft="@id/input_email"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/prompt_microchip" />
+
+            <!--Buttons-->
+
+            <Button style="@style/textButton"
+                android:id="@+id/button_reset"
+                android:text="@string/button_text_reset"
+                android:layout_marginEnd="12dp"
+                android:onClick="clickReset"
+                android:layout_alignLeft="@id/input_neutered"
+                android:layout_below="@id/input_neutered"
+                />
+            <Button style="@style/textButton"
+                android:text="@string/button_text_submit"
+                android:onClick="clickSubmit"
+                android:layout_toRightOf="@id/button_reset"
+                android:layout_below="@id/input_neutered"/>
+
+
+        </RelativeLayout>
+
+
+</RelativeLayout>
