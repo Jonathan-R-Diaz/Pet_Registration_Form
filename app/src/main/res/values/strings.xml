@@ -28,7 +28,9 @@
         <item>German Shepard</item>
     </string-array>
 
-    <string name="error_microchip">Microchip must be between 6–15 uppercase letters and/or numbers!</string>
+
+    <string name="error_microchip_duplicate">Microchip ID already in the database!</string>
+    <string name="error_microchip_formatting">Microchip IDs may only have 5-15 capital letters or numbers!</string>
     <string name="error_name">First letter of each name should be capital!</string>
     <string name="error_email">Email format: "prefix@domain.[edu, co, com, gal]"</string>
     <string name="error_codes">Codes do not match!</string>

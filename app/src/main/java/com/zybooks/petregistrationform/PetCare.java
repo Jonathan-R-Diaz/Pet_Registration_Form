@@ -13,8 +13,20 @@ public class PetCare {
         return mt.matches();
     }
 
-    public boolean checkMicroChip(String microchip){
-        System.out.println("Microchip: " + microchip);
+    public boolean checkMicroChip(String microchip, String[] chips){
+        return checkDatabase(microchip, chips) && checkFormatting(microchip);
+    }
+
+    public boolean checkDatabase(String microchip, String[] chips){
+        for (String chip : chips){
+            if (chip.equals(microchip)){
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean checkFormatting(String microchip){
         return regex(microchip,"^[A-Z0-9]{5,15}$");
     }
 

@@ -99,6 +99,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void clickSubmit(View view){
 
+        String[] chips = getResources().getStringArray(R.array.chips);
         System.out.println("Click");
         boolean submitted = true;
 
@@ -119,10 +120,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         resetTextViewColors();
-        if (!mPetCare.checkMicroChip(microchip)) {
+        if (!mPetCare.checkMicroChip(microchip, chips)) {
             makeTextViewRed(mMicroChipTextView);
             submitted = false;
-            Toast.makeText(this, R.string.error_microchip, Toast.LENGTH_SHORT).show();
+            if (!mPetCare.checkDatabase(microchip, chips))
+                Toast.makeText(this, R.string.error_microchip_duplicate, Toast.LENGTH_SHORT).show();
+            if (!mPetCare.checkFormatting(microchip))
+                Toast.makeText(this, R.string.error_microchip_formatting, Toast.LENGTH_SHORT).show();
+
         }
         if(!mPetCare.checkName(name)){
             makeTextViewRed(mNameTextView);
