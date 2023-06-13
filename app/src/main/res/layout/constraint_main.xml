@@ -122,6 +122,7 @@
     <EditText style="@style/input_constraint"
         android:id="@+id/input_access"
         android:layout_width="184dp"
+        android:inputType="numberPassword"
         app:layout_constraintLeft_toLeftOf="@id/input_email"
         app:layout_constraintTop_toBottomOf="@id/input_access"
         app:layout_constraintBaseline_toBaselineOf="@id/prompt_access"
@@ -135,6 +136,7 @@
     <EditText style="@style/input_constraint"
         android:id="@+id/input_confirm"
         android:layout_width="184dp"
+        android:inputType="numberPassword"
         app:layout_constraintLeft_toLeftOf="@id/input_email"
         app:layout_constraintBaseline_toBaselineOf="@id/prompt_confirm"
         app:layout_constraintTop_toBottomOf="@id/input_access"
@@ -168,14 +170,13 @@
         app:layout_constraintLeft_toLeftOf="@id/input_email"
         app:layout_constraintBaseline_toBaselineOf="@id/prompt_neutered"
         app:layout_constraintTop_toBottomOf="@id/input_breed"/>
+
     <Button style="@style/textButton"
         android:id="@+id/button_reset"
         android:text="@string/button_text_reset"
         android:onClick="clickReset"
-        app:layout_constrain="12dp"
         app:layout_constraintTop_toBottomOf="@id/input_neutered"
         app:layout_constraintLeft_toLeftOf="@id/input_neutered"
-
         />
     <Button style="@style/textButton"
         android:text="@string/button_text_submit"

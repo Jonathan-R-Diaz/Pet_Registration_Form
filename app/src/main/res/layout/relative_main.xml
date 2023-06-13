@@ -168,6 +168,7 @@
                 android:layout_below="@id/input_email"
                 android:layout_alignBaseline="@id/prompt_access"
                 android:layout_alignLeft="@id/input_email"
+                android:inputType="numberPassword"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/prompt_microchip" />
 
@@ -179,6 +180,7 @@
                 android:layout_below="@id/input_access"
                 android:layout_alignBaseline="@id/prompt_confirm"
                 android:layout_alignLeft="@id/input_email"
+                android:inputType="numberPassword"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/prompt_microchip" />
 
