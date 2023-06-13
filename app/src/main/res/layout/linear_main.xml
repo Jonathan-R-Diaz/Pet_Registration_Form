@@ -115,10 +115,9 @@
                 </RadioGroup>
                 <!--Email-->
                 <EditText style="@style/input_long"
-
                     android:id="@+id/input_email"
                     android:inputType="textEmailAddress"
-                    android:text="@string/test_bademail"/>
+                 />
                 <!--Access-->
                 <EditText style="@style/input_long"
                     android:id="@+id/input_access"
