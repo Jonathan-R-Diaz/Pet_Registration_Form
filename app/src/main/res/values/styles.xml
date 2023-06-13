@@ -41,4 +41,10 @@
         <item name="android:textSize">@dimen/default_textsize</item>
         <item name="android:color">@color/black</item>
     </style>
+
+    <style name="input_constraint">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">@dimen/default_textsize</item>
+    </style>
 </resources>

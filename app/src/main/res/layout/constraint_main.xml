@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/header"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_padding"
+
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!--App name-->
+    <TextView
+        android:id="@+id/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textSize="@dimen/default_textsize"
+        android:layout_gravity="center"
+        android:layout_margin="@dimen/default_margin"
+        android:paddingBottom="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+    <!--Title-->
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/title"
+        android:paddingBottom="40dp"
+        android:textSize="@dimen/header1"
+        app:layout_constraintTop_toBottomOf="@id/app_name"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
+    <!--Widget-->
+    <!--Microchip-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_microchip"
+        android:text="@string/text_microchip"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText
+        android:id="@+id/input_microchip"
+        android:layout_width="156dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/default_microchip"
+        app:layout_constraintBaseline_toBaselineOf="@id/prompt_microchip"
+        app:layout_constraintLeft_toLeftOf="@id/input_email"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        />
+    <!--Name-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_name"
+        android:text="@string/text_name"
+        app:layout_constraintTop_toBottomOf="@id/prompt_microchip"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <EditText style="@style/input_constraint"
+        android:id="@+id/input_name"
+        android:layout_width="156dp"
+        app:layout_constraintTop_toBottomOf="@id/prompt_microchip"
+        app:layout_constraintBaseline_toBaselineOf="@id/prompt_name"
+        app:layout_constraintLeft_toLeftOf="@id/input_email"
+        />
+    <!--Gender-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_gender"
+        android:text="@string/text_gender"
+        app:layout_constraintTop_toBottomOf="@id/prompt_name"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+    <RadioGroup
+        android:id="@+id/gender_radio_group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintLeft_toLeftOf="@id/input_email"
+        app:layout_constraintTop_toBottomOf="@id/input_name"
+
+        >
+        <RadioButton
+            android:id="@+id/button_male"
+            android:text="@string/gender_male"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toEndOf="@id/prompt_gender"
+            app:layout_constraintTop_toBottomOf="@id/prompt_gender"
+
+            />
+        <RadioButton
+            android:id="@+id/button_female"
+            android:text="@string/gender_female"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginStart="@dimen/default_margin"/>
+    </RadioGroup>
+
+    <!--Email-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_email"
+        android:text="@string/text_email"
+        app:layout_constraintTop_toBottomOf="@id/prompt_gender"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <EditText style="@style/input_constraint"
+        android:id="@+id/input_email"
+        android:layout_marginStart="@dimen/relative_margin"
+        android:layout_width="184dp"
+        app:layout_constraintStart_toEndOf="@id/prompt_email"
+        app:layout_constraintTop_toBottomOf="@id/gender_radio_group"
+        app:layout_constraintBaseline_toBaselineOf="@id/prompt_email"
+        />
+
+    <!--Access-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_access"
+        android:text="@string/text_access"
+        app:layout_constraintTop_toBottomOf="@id/prompt_email"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <EditText style="@style/input_constraint"
+        android:id="@+id/input_access"
+        android:layout_width="184dp"
+        app:layout_constraintLeft_toLeftOf="@id/input_email"
+        app:layout_constraintTop_toBottomOf="@id/input_access"
+        app:layout_constraintBaseline_toBaselineOf="@id/prompt_access"
+        />
+    <!--Confirm-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_confirm"
+        android:text="@string/text_confirm"
+        app:layout_constraintTop_toBottomOf="@id/prompt_access"
+        app:layout_constraintStart_toStartOf="parent" />
+    <EditText style="@style/input_constraint"
+        android:id="@+id/input_confirm"
+        android:layout_width="184dp"
+        app:layout_constraintLeft_toLeftOf="@id/input_email"
+        app:layout_constraintBaseline_toBaselineOf="@id/prompt_confirm"
+        app:layout_constraintTop_toBottomOf="@id/input_access"
+        />
+    <!--Breed-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_breed"
+        android:text="@string/text_breed"
+        app:layout_constraintTop_toBottomOf="@id/prompt_confirm"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <Spinner style="@style/input_long"
+        android:id="@+id/input_breed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintLeft_toLeftOf="@id/input_email"
+        app:layout_constraintBaseline_toBaselineOf="@id/prompt_breed"
+        app:layout_constraintTop_toBottomOf="@id/input_confirm"/>
+    <!--Neutered-->
+    <TextView style="@style/prompt"
+        android:id="@+id/prompt_neutered"
+        android:text="@string/text_neutered"
+        app:layout_constraintTop_toBottomOf="@id/prompt_breed"
+        app:layout_constraintStart_toStartOf="parent"/>
+    <CheckBox
+        android:id="@+id/input_neutered"
+        android:text="@string/input_neutered"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:checked="true"
+        app:layout_constraintLeft_toLeftOf="@id/input_email"
+        app:layout_constraintBaseline_toBaselineOf="@id/prompt_neutered"
+        app:layout_constraintTop_toBottomOf="@id/input_breed"/>
+    <Button style="@style/textButton"
+        android:id="@+id/button_reset"
+        android:text="@string/button_text_reset"
+        android:onClick="clickReset"
+        app:layout_constrain="12dp"
+        app:layout_constraintTop_toBottomOf="@id/input_neutered"
+        app:layout_constraintLeft_toLeftOf="@id/input_neutered"
+
+        />
+    <Button style="@style/textButton"
+        android:text="@string/button_text_submit"
+        android:onClick="clickSubmit"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toBottomOf="@id/input_neutered"
+        app:layout_constraintStart_toEndOf="@id/button_reset"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
