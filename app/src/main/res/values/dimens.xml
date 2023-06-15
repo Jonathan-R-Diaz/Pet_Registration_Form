@@ -9,4 +9,5 @@
     <dimen name="right_padding_long">24dp</dimen>
 
     <dimen name="relative_margin">32dp</dimen>
+    <dimen name="table_margin">@dimen/relative_margin</dimen>
 </resources>
