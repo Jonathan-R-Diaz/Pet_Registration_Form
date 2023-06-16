@@ -103,11 +103,13 @@ public class MainActivity extends AppCompatActivity {
         String microchip = mMicroChipEditText.getText().toString();
         String name = mNameEditText.getText().toString();
         String email = mEmailEditText.getText().toString();
+        String code1str = mAccessEditText.getText().toString();
+        String code2str = mConfirmEditText.getText().toString();
 
+        if(!checkCompletion(microchip, name, email, code1str, code2str)) return;
         int code1, code2;
+
         try{
-            String code1str = mAccessEditText.getText().toString();
-            String code2str = mConfirmEditText.getText().toString();
             code1 = Integer.parseInt(code1str);
             code2 = Integer.parseInt(code2str);
         }
@@ -116,7 +118,6 @@ public class MainActivity extends AppCompatActivity {
             code2 = 1;
         }
 
-        resetTextViewColors();
         if (!mPetCare.checkMicroChip(microchip, chips)) {
             makeTextViewRed(mMicroChipTextView);
             submitted = false;
@@ -145,6 +146,37 @@ public class MainActivity extends AppCompatActivity {
         if (submitted){
             Toast.makeText(this, R.string.success, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    public boolean checkCompletion(String microchip, String name, String email, String code1, String code2){
+        resetTextViewColors();
+        boolean complete = true;
+        if (mPetCare.isBlank(microchip)){
+            makeTextViewRed(mMicroChipTextView);
+            complete = false;
+        }
+        if(mPetCare.isBlank(name)){
+            makeTextViewRed(mNameTextView);
+            complete = false;
+        }
+        if (mPetCare.isBlank(email)){
+            makeTextViewRed(mEmailTextView);
+            complete = false;
+        }
+        if (mPetCare.isBlank(code1)){
+            makeTextViewRed(mAccessTextView);
+            complete = false;
+        }
+        if (mPetCare.isBlank(code2)){
+            makeTextViewRed(mConfirmTextView);
+            complete = false;
+        }
+
+        if (!complete){
+            Toast.makeText(this, R.string.error_empty_prompt, Toast.LENGTH_LONG).show();
+        }
+
+        return complete;
     }
 
 }
