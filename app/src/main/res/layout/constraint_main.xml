@@ -108,6 +108,7 @@
         android:id="@+id/input_email"
         android:layout_marginStart="@dimen/relative_margin"
         android:layout_width="184dp"
+        android:hint="@string/default_email"
         app:layout_constraintStart_toEndOf="@id/prompt_email"
         app:layout_constraintTop_toBottomOf="@id/gender_radio_group"
         app:layout_constraintBaseline_toBaselineOf="@id/prompt_email"

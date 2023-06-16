@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Border-->
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/default_padding"
+    tools:context="com.zybooks.petregistrationform.MainActivity"
+    android:stretchColumns="1">
+
+    <!--App name-->
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/app_name"
+            android:textSize="@dimen/default_textsize"
+            android:layout_span="3"
+            android:gravity="center"
+            android:paddingBottom="18dp"/>
+    </TableRow>
+
+    <!--Title-->
+    <TableRow>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textSize="@dimen/header1"
+            android:layout_span="3"
+            android:gravity="center"
+            android:paddingBottom="40dp"/>
+    </TableRow>
+
+    <TableLayout
+        android:stretchColumns="1">
+        <!--Microchip-->
+        <TableRow>
+            <TextView
+                android:id="@+id/prompt_microchip"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_microchip"
+                android:layout_marginEnd="@dimen/table_margin"/>
+            <EditText
+                android:id="@+id/input_microchip"
+                style="@style/input_short"
+                android:hint="@string/default_microchip" />
+        </TableRow>
+
+        <!--Name-->
+        <TableRow>
+            <TextView
+                android:id="@+id/prompt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_name" />
+            <EditText
+                android:id="@+id/input_name"
+                style="@style/input_short" />
+        </TableRow>
+
+        <!--Gender-->
+        <TableRow>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/text_gender"
+                android:id="@+id/prompt_gender"/>
+
+            <RadioGroup
+                android:id="@+id/gender_radio_group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <RadioButton
+                    android:id="@+id/button_male"
+                    android:text="@string/gender_male"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/default_margin"/>
+                <RadioButton
+                    android:id="@+id/button_female"
+                    android:text="@string/gender_female"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true" />
+            </RadioGroup>
+        </TableRow>
+
+        <!--Email-->
+        <TableRow>
+            <TextView
+                android:id="@+id/prompt_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_email"
+                />
+            <EditText
+                android:id="@+id/input_email"
+                style="@style/input_long"
+                android:inputType="textEmailAddress"
+                android:hint="@string/default_email"/>
+        </TableRow>
+
+        <!--Access-->
+        <TableRow>
+            <TextView
+                android:id="@+id/prompt_access"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_access" />
+            <EditText
+                android:id="@+id/input_access"
+                style="@style/input_long"
+                android:inputType="numberPassword" />
+        </TableRow>
+
+        <!--Confirm-->
+        <TableRow>
+            <TextView
+                android:id="@+id/prompt_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_confirm" />
+            <EditText
+                android:id="@+id/input_confirm"
+                style="@style/input_long"
+                android:inputType="numberPassword" />
+        </TableRow>
+
+        <!--Breed-->
+        <TableRow>
+
+            <TextView
+                android:id="@+id/prompt_breed"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:text="@string/text_breed" />
+            <Spinner
+                android:id="@+id/input_breed"
+                style="@style/input_long"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </TableRow>
+
+        <!--Neutered-->
+        <TableRow>
+            <TextView
+                android:id="@+id/prompt_neutered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/text_neutered" />
+            <CheckBox
+                android:id="@+id/input_neutered"
+                android:text="@string/input_neutered"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+        </TableRow>
+    </TableLayout>
+
+    <!--Buttons-->
+    <TableRow>
+
+        <Button
+            style="@style/textButton"
+            android:layout_width="wrap_content"
+
+            android:layout_marginStart="108dp"
+            android:layout_marginEnd="20dp"
+            android:onClick="clickReset"
+            android:text="@string/button_text_reset" />
+        <Button
+            android:text="@string/button_text_submit"
+            style="@style/textButton"
+            android:onClick="clickSubmit"
+            android:layout_marginEnd="@dimen/table_margin"/>
+    </TableRow>
+
+</TableLayout>

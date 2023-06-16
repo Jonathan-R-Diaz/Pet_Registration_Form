@@ -41,14 +41,15 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:paddingRight="@dimen/relative_margin">
+            android:paddingEnd="@dimen/relative_margin">
 
             <!--Microchip-->
             <TextView
                 android:id="@+id/prompt_microchip"
                 style="@style/prompt"
                 android:labelFor="@id/input_microchip"
-                android:text="@string/text_microchip" />
+                android:text="@string/text_microchip"
+                />
 
             <!--Name-->
             <TextView
@@ -70,7 +71,8 @@
                 android:id="@+id/prompt_email"
                 style="@style/prompt"
                 android:layout_below="@id/prompt_gender"
-                android:text="@string/text_email" />
+                android:text="@string/text_email"
+                android:hint="@string/default_email"/>
 
             <!--Access-->
             <TextView
@@ -110,7 +112,8 @@
                 android:layout_alignStart="@id/input_email"
                 android:layout_alignParentEnd="true"
                 android:layout_toEndOf="@id/prompt_microchip"
-                android:layout_marginEnd="@dimen/relative_margin"/>
+                android:layout_marginEnd="@dimen/relative_margin"
+                android:hint="@string/default_microchip"/>
 
             <!--Name-->
             <EditText
@@ -158,7 +161,8 @@
                 android:layout_alignBaseline="@id/prompt_email"
                 android:layout_marginStart="@dimen/relative_margin"
                 android:layout_alignParentEnd="true"
-                android:layout_toEndOf="@id/prompt_microchip" />
+                android:layout_toEndOf="@id/prompt_microchip"
+                android:hint="@string/default_email"/>
 
             <!--Access-->
             <EditText
@@ -221,9 +225,5 @@
                 android:onClick="clickSubmit"
                 android:layout_toRightOf="@id/button_reset"
                 android:layout_below="@id/input_neutered"/>
-
-
         </RelativeLayout>
-
-
 </RelativeLayout>

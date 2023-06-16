@@ -117,6 +117,7 @@
                 <EditText style="@style/input_long"
                     android:id="@+id/input_email"
                     android:inputType="textEmailAddress"
+                    android:hint="@string/default_email"
                  />
                 <!--Access-->
                 <EditText style="@style/input_long"
