@@ -20,12 +20,9 @@ public class MainActivity extends AppCompatActivity {
 
     private TextView mMicroChipTextView;
     private TextView mNameTextView;
-    private TextView mGenderTextView;
     private TextView mEmailTextView;
     private TextView mAccessTextView;
     private TextView mConfirmTextView;
-    private TextView mBreedTextView;
-    private TextView mNeuteredTextView;
 
     private EditText mMicroChipEditText;
     private EditText mNameEditText;
