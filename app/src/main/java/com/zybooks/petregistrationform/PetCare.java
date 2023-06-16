@@ -44,4 +44,8 @@ public class PetCare {
         System.out.println("Checking codes... ");
         return code1 == code2;
     }
+
+    public boolean isBlank(String str){
+        return str.isEmpty();
+    }
 }
