@@ -38,14 +38,14 @@
     <string name="error_empty_prompt">Please fill out all prompts.</string>
 
     <string name="test_goodchip">ELGA43</string>
-    <string name="test_badchip">fuckin</string>
+    <string name="test_badchip">elga43</string>
     <string name="test_goodname">Timmy Doo</string>
-    <string name="test_badname">ness wilson</string>
+    <string name="test_badname">timmy doo</string>
     <string name="test_goodemail">example@example.com</string>
     <string name="test_bademail">name@placeorg</string>
     <string name="test_bademail2">nameplace.org</string>
 
-    <string name="test_code">69420</string>
+    <string name="test_code">123456</string>
 
     <string name="success">Pet has been successfully submitted to database!</string>
 
