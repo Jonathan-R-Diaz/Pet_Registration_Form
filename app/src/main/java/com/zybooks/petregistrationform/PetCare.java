@@ -1,11 +1,22 @@
 //MODEL
 package com.zybooks.petregistrationform;
 
+import android.app.Application;
+import android.content.Context;
+
+import com.zybooks.petregistrationform.repo.PetRepository;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PetCare {
-    public PetCare(){}
+    private Context mContext;
+
+    private final PetRepository mPetRepo;
+    public PetCare(Application application){
+        System.out.println("Petcare object called");
+        mPetRepo = PetRepository.getInstance(application.getApplicationContext());
+    }
 
     public boolean regex(String input, String re){
         Pattern pt = Pattern.compile(re);
@@ -48,4 +59,9 @@ public class PetCare {
     public boolean isBlank(String str){
         return str.isEmpty();
     }
+
+    public PetRepository getPetRepo(){
+        return mPetRepo;
+    }
+
 }

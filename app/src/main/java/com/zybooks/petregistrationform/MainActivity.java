@@ -1,6 +1,7 @@
 //CONTROLLER
 package com.zybooks.petregistrationform;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -13,6 +14,10 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.zybooks.petregistrationform.model.PetEntry;
+
+import java.io.IOException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,9 +41,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.table_main);
+        setContentView(R.layout.constraint_main);
 
-        mPetCare = new PetCare();
+        mPetCare = new PetCare(this.getApplication());
 
         // Assign the widgets to fields
         mMicroChipTextView = findViewById(R.id.prompt_microchip);
@@ -81,11 +86,9 @@ public class MainActivity extends AppCompatActivity {
         mBreedSpinner.setSelection(0);
         mNeuteredCheckbox.setChecked(true);
     }
-
-    public void makeTextViewRed(TextView textView){
+    public void makeTextViewRed(@NonNull TextView textView){
         textView.setTextColor(getColor(R.color.red));
     }
-
     public void resetTextViewColors(){
 
         mMicroChipTextView.setTextColor(getColor(R.color.gray));
@@ -97,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
     public void clickSubmit(View view){
 
         String[] chips = getResources().getStringArray(R.array.chips);
-        System.out.println("Click");
+        System.out.println("Submit Click");
         boolean submitted = true;
 
         String microchip = mMicroChipEditText.getText().toString();
@@ -143,11 +146,15 @@ public class MainActivity extends AppCompatActivity {
             submitted = false;
             Toast.makeText(this, R.string.error_codes, Toast.LENGTH_SHORT).show();
         }
+
         if (submitted){
+            // TODO: Get the gender, breed, and fertility status from radio group, spinner, and checkbox
+            PetEntry pet = new PetEntry(microchip, name, true, email, mBreedSpinner.toString(), true);
+            mPetCare.getPetRepo().addPetEntry(pet);
             Toast.makeText(this, R.string.success, Toast.LENGTH_SHORT).show();
+
         }
     }
-
     public boolean checkCompletion(String microchip, String name, String email, String code1, String code2){
         resetTextViewColors();
         boolean complete = true;
