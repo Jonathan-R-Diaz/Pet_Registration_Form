@@ -4,6 +4,7 @@ package com.zybooks.petregistrationform;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -97,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
         mAccessTextView.setTextColor(getColor(R.color.gray));
         mConfirmTextView.setTextColor(getColor(R.color.gray));
     }
+    @SuppressLint("NonConstantResourceId")
     public void clickSubmit(View view){
 
         String[] chips = getResources().getStringArray(R.array.chips);
@@ -108,6 +110,19 @@ public class MainActivity extends AppCompatActivity {
         String email = mEmailEditText.getText().toString();
         String code1str = mAccessEditText.getText().toString();
         String code2str = mConfirmEditText.getText().toString();
+        boolean isMale = false;
+        System.out.println("Gender selected: " + mGenderRadioGroup.getCheckedRadioButtonId());
+            // Which radio button was selected?
+            switch (mGenderRadioGroup.getCheckedRadioButtonId()) {
+                case R.id.button_male:
+                    isMale = true;
+                    break;
+                case R.id.button_female:
+                    isMale = false;
+                    break;
+            }
+        String breed = mBreedSpinner.getItemAtPosition(mBreedSpinner.getSelectedItemPosition()).toString();
+        boolean isNeutered = mNeuteredCheckbox.isChecked();
 
         if(!checkCompletion(microchip, name, email, code1str, code2str)) return;
         int code1, code2;
@@ -121,10 +136,10 @@ public class MainActivity extends AppCompatActivity {
             code2 = 1;
         }
 
-        if (!mPetCare.checkMicroChip(microchip, chips)) {
+        if (!mPetCare.checkMicroChip(microchip)) {
             makeTextViewRed(mMicroChipTextView);
             submitted = false;
-            if (!mPetCare.checkDatabase(microchip, chips))
+            if (!mPetCare.checkDatabase(microchip))
                 Toast.makeText(this, R.string.error_microchip_duplicate, Toast.LENGTH_SHORT).show();
             if (!mPetCare.checkFormatting(microchip))
                 Toast.makeText(this, R.string.error_microchip_formatting, Toast.LENGTH_SHORT).show();
@@ -146,10 +161,10 @@ public class MainActivity extends AppCompatActivity {
             submitted = false;
             Toast.makeText(this, R.string.error_codes, Toast.LENGTH_SHORT).show();
         }
+        System.out.println("Test");
 
         if (submitted){
-            // TODO: Get the gender, breed, and fertility status from radio group, spinner, and checkbox
-            PetEntry pet = new PetEntry(microchip, name, true, email, mBreedSpinner.toString(), true);
+            PetEntry pet = new PetEntry(microchip, name, isMale, email, breed, isNeutered);
             mPetCare.getPetRepo().addPetEntry(pet);
             Toast.makeText(this, R.string.success, Toast.LENGTH_SHORT).show();
 

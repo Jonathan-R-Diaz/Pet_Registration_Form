@@ -24,7 +24,7 @@ public class PetRepository {
     private final PetEntryDao mPetEntryDao;
 
     public static PetRepository getInstance(Context context) {
-        System.out.println("PetRepository getInstace called");
+        System.out.println("PetRepository getInstance called");
         if (mPetRepo == null) {
             System.out.println("Creating new PetRepository");
             mPetRepo = new PetRepository(context);

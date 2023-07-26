@@ -4,14 +4,14 @@ package com.zybooks.petregistrationform;
 import android.app.Application;
 import android.content.Context;
 
+import com.zybooks.petregistrationform.model.PetEntry;
 import com.zybooks.petregistrationform.repo.PetRepository;
 
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class PetCare {
-    private Context mContext;
-
     private final PetRepository mPetRepo;
     public PetCare(Application application){
         System.out.println("Petcare object called");
@@ -24,13 +24,14 @@ public class PetCare {
         return mt.matches();
     }
 
-    public boolean checkMicroChip(String microchip, String[] chips){
-        return checkDatabase(microchip, chips) && checkFormatting(microchip);
+    public boolean checkMicroChip(String microchip){
+        return checkDatabase(microchip) && checkFormatting(microchip);
     }
 
-    public boolean checkDatabase(String microchip, String[] chips){
-        for (String chip : chips){
-            if (chip.equals(microchip)){
+    public boolean checkDatabase(String microchip){
+        List<PetEntry> pets = getPetRepo().getPetEntries();
+        for (PetEntry pet : pets){
+            if (pet.getId().equals(microchip)){
                 return false;
             }
         }
