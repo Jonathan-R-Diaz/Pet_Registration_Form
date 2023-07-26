@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
     @SuppressLint("NonConstantResourceId")
     public void clickSubmit(View view){
 
-        String[] chips = getResources().getStringArray(R.array.chips);
         System.out.println("Submit Click");
         boolean submitted = true;
 
@@ -111,16 +110,16 @@ public class MainActivity extends AppCompatActivity {
         String code1str = mAccessEditText.getText().toString();
         String code2str = mConfirmEditText.getText().toString();
         boolean isMale = false;
-        System.out.println("Gender selected: " + mGenderRadioGroup.getCheckedRadioButtonId());
-            // Which radio button was selected?
-            switch (mGenderRadioGroup.getCheckedRadioButtonId()) {
-                case R.id.button_male:
-                    isMale = true;
-                    break;
-                case R.id.button_female:
-                    isMale = false;
-                    break;
-            }
+
+        switch (mGenderRadioGroup.getCheckedRadioButtonId()) {
+            case R.id.button_male:
+                isMale = true;
+                break;
+            case R.id.button_female:
+                isMale = false;
+                break;
+        }
+
         String breed = mBreedSpinner.getItemAtPosition(mBreedSpinner.getSelectedItemPosition()).toString();
         boolean isNeutered = mNeuteredCheckbox.isChecked();
 
@@ -161,7 +160,6 @@ public class MainActivity extends AppCompatActivity {
             submitted = false;
             Toast.makeText(this, R.string.error_codes, Toast.LENGTH_SHORT).show();
         }
-        System.out.println("Test");
 
         if (submitted){
             PetEntry pet = new PetEntry(microchip, name, isMale, email, breed, isNeutered);
